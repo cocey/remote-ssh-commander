@@ -13,7 +13,7 @@ import (
 )
 
 // Version constant
-const Version string = "1.0.0-beta"
+const Version string = "1.0.0"
 
 // help message string
 var helpMsg = `Remote SSH Commander = run commands on remote devices via SSH
