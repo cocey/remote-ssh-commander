@@ -89,3 +89,23 @@ redis install on linode server
 ]
 ~~~
 
+---
+
+rollback from backup on Nexus 1000v
+
+~~~
+[
+    ...
+    {
+        "name":"DC1-N1K-1",
+        "ip": "10.1.1.1",
+        "username":"admin",
+        "password":"admin",
+        "commands":[
+            "rollback running-config checkpoint {%name%} best-effort ",
+            ""
+        ]
+    },
+    ...
+]
+~~~
