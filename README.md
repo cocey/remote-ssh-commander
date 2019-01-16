@@ -50,3 +50,24 @@ running with commands file from different location
 $ ./rsshc -c ~/Documents/my-commands.json
 ...
 ~~~
+
+## Examples
+
+redis install on linode server
+
+~~~
+{
+        "name":"linode1234567",
+        "ip": "123.45.67.89",
+        "username":"root",
+        "password":"root",
+        "commands":[
+            "apt install --yes --force-yes redis-server",
+            "cp /etc/redis/redis.conf ./redis.conf.bak",
+            "cat ./redis.conf.bak | sed -e 's/supervised no/supervised systemd/' > ./redis.conf.new",
+            "cp -f ./redis.conf.new /etc/redis/redis.conf",
+            "systemctl restart redis",
+            ""
+        ]
+    }
+~~~
