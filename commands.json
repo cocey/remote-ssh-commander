@@ -1,0 +1,35 @@
+[
+    {
+        "name":"DC1-N1K-1",
+        "ip": "10.1.1.1",
+        "username":"admin",
+        "password":"admin",
+        "commands":[
+            "rollback running-config checkpoint {%name%} best-effort ",
+            ""
+        ]
+    },
+    {
+        "name":"DC1-N1K-2",
+        "ip": "10.1.1.2",
+        "username":"admin",
+        "password":"admin",
+        "commands":[
+            "copy tftp://10.1.1.3/{%name%} startup-config vrf management",
+            "reload",
+            "yes",
+            ""
+        ]
+    },
+    {
+        "name":"DC1-F1",
+        "ip":"10.1.1.100",
+        "username":"admin",
+        "password":"admin",
+        "commands":[
+            "connect local-mgmt",
+            "erase samdb",
+            ""
+        ]
+    }
+]
