@@ -50,13 +50,29 @@ running with commands file from different location
 $ ./rsshc -c ~/Documents/my-commands.json
 ...
 ~~~
+## Inline Parameters
+
+you can use name and ip data in your command with
+{%name%} and {%ip%}
+
+~~~
+    ...
+        "commands":[
+            ...
+            "rollback running-config checkpoint {%name%} best-effort ",
+            "ping {%ip%}"
+            ...
+        ]
+    ...
+~~~
 
 ## Examples
 
-redis install on linode server
+redis install on linode server 
 
 ~~~
-{
+[
+    {
         "name":"linode1234567",
         "ip": "123.45.67.89",
         "username":"root",
@@ -70,4 +86,6 @@ redis install on linode server
             ""
         ]
     }
+]
 ~~~
+
